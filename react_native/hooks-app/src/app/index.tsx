@@ -5,6 +5,10 @@ import { Paso2 } from './paso2'
 import { Paso3 } from './paso3'
 import { Paso3Suma } from './paso3Suma'
 import { Paso4 } from './paso4'
+import { Paso1mp } from './paso1_mp'
+import { Paso2mp } from './paso2_mp'
+import { Paso4mp } from './paso4_mp'
+import { Paso3mp } from './paso3_mp'
 
 // ┌──────────────────────────────────────────────────────────────────┐
 // │  Cambia este número y guarda (Ctrl+S) para navegar entre pasos. │
@@ -15,7 +19,7 @@ import { Paso4 } from './paso4'
 // │  5  Paso 5  Custom hook — useConexionSimulada                    │
 // │  6  Paso 6  Ejemplo combinado — pantalla de estado del servidor  │
 // └──────────────────────────────────────────────────────────────────┘
-const PASO = 5
+const PASO = 9
 
 export default function Index() {
   switch (PASO) {
@@ -29,6 +33,14 @@ export default function Index() {
       return <Paso3Suma />
     case 5:
       return <Paso4 />
+    case 6:
+      return <Paso1mp />
+    case 7:
+      return <Paso2mp />
+    case 8:
+      return <Paso3mp />
+    case 9:
+      return <Paso4mp />
     default:
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

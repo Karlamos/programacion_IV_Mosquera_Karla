@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 type EstadoPing = 'pinging' | 'ok' | 'timeout' | 'inactivo'
 
-export default function Paso2() {
+export function Paso2() {
   const [latencia, setLatencia] = useState<number | null>(null)
   const [estado, setEstado] = useState<EstadoPing>('inactivo')
   const [activo, setActivo] = useState<boolean>(false)
