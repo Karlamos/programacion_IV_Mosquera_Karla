@@ -1,40 +1,28 @@
 // app/index.tsx — añade esto debajo de los estilos
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Paso1FilaServidorRepaso } from './paso1FilaServidorRepaso'
 
-type Servidor = {
+type Figuras = {
   id: string
   nombre: string
-  ip: string
-  activo: boolean
+  color: string
 }
 
-const SERVIDORES: Servidor[] = [
-  { id: '1', nombre: 'web-01',   ip: '10.0.2.10', activo: true  },
-  { id: '2', nombre: 'web-02',   ip: '10.0.2.11', activo: true  },
-  { id: '3', nombre: 'db-primario', ip: '10.0.3.20', activo: true  },
-  { id: '4', nombre: 'db-replica',  ip: '10.0.3.21', activo: false },
-  { id: '5', nombre: 'cache-01',    ip: '10.0.4.10', activo: true  },
-  { id: '6', nombre: 'cache-02',    ip: '10.0.4.11', activo: false },
-  { id: '7', nombre: 'lb-01',       ip: '10.0.1.1',  activo: true  },
-  { id: '8', nombre: 'bastion',     ip: '203.0.113.5', activo: true },
+const FIGURAS: Figuras[] = [
+  { id: '1', nombre: 'Triangulo', color: 'Rosado' },
+  { id: '2', nombre: 'Rectangulo', color: 'Verde' },
+  { id: '3', nombre: 'Cuadrado', color: 'Azúl' },
 ]
 
-function FilaServidor({ servidor }: { servidor: Servidor }) {
+function FilaFiguras({ figuras }: { figuras: Figuras }) {
   return (
     <View style={styles1.fila}>
       <View style={styles1.info}>
-        <Text style={styles1.nombre}>{servidor.nombre}</Text>
-        <Text style={styles1.ip}>{servidor.ip}</Text>
+        <Text style={styles1.nombre}>{figuras.nombre}</Text>
+        <Text style={styles1.color}>{figuras.color}</Text>
       </View>
       <View
-        style={[
-          styles1.estado,
-          servidor.activo ? styles1.estadoActivo : styles1.estadoInactivo,
-        ]}
       >
-        <Text style={styles1.textoEstado}>
-          {servidor.activo ? 'ACTIVO' : 'CAÍDO'}
-        </Text>
       </View>
     </View>
   )
@@ -43,11 +31,11 @@ function FilaServidor({ servidor }: { servidor: Servidor }) {
 export function Paso1() {
   return (
     <SafeAreaView style={styles1.contenedor}>
-      <Text style={styles1.titulo}>Inventario de servidores</Text>
-      <FlatList<Servidor>
-        data={SERVIDORES}
+      <Text style={styles1.titulo}>Inventario de Figuras</Text>
+      <FlatList<Figuras>
+        data={FIGURAS}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <FilaServidor servidor={item} />}
+        renderItem={({ item }) => <FilaFiguras figuras={item} />}
       />
     </SafeAreaView>
   )

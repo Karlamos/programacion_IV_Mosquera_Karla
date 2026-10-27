@@ -1,6 +1,11 @@
 // app/index.tsx
 import { StyleSheet, Text, View } from 'react-native'
-import { Paso1 } from './Paso1'
+import { Paso1 } from '../components/Paso1'
+import { Paso2 } from '@/components/Paso2'
+import { Paso3 } from '@/components/paso3'
+import { Paso4 } from '@/components/paso4'
+import { Paso5 } from '@/components/paso5'
+import { Paso6 } from '@/components/paso6'
 
 // ┌──────────────────────────────────────────────────────────────────────┐
 // │  Cambia este número y guarda (Ctrl+S) para navegar entre pasos.     │
@@ -11,7 +16,7 @@ import { Paso1 } from './Paso1'
 // │  5  Formulario con validación — agregar servidor                    │
 // │  6  KeyboardAvoidingView — formulario sin tapado de teclado         │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 1
+const PASO = 6
 
 export default function Index() {
   switch (PASO) {
@@ -26,7 +31,7 @@ export default function Index() {
     case 5:
       return <Paso5 />
     case 6:
-      return <Paso6 />
+      return <Paso6/>
     default:
       return (
         <View style={styles.centrado}>
