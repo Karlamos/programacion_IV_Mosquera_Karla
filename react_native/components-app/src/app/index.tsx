@@ -7,6 +7,13 @@ import { Paso1Simpson } from './paso1_simpson'
 import { Paso4 } from './paso4'
 import { Paso5 } from './paso5'
 import { Paso6 } from './paso6'
+import { Paso1Transporte } from './paso1_simpson_mp'
+import { Paso1mp } from './paso1_mp'
+import { Paso2mp } from './paso2_mp'
+import { Paso3mp } from './paso3_mp'
+import { Paso4mp } from './paso4_mp'
+import { Paso5mp } from './paso5_mp'
+import { Paso6mp } from './paso6_mp'
 
 // ┌──────────────────────────────────────────────────────────────────┐
 // │  Cambia este número y guarda (Ctrl+S) para navegar entre pasos. │
@@ -17,7 +24,7 @@ import { Paso6 } from './paso6'
 // │  5  Paso 5  Modal de confirmación                               │
 // │  6  Paso 6  Pantalla completa — detalle de servidor             │
 // └──────────────────────────────────────────────────────────────────┘
-const PASO = 7
+const PASO = 13
 
 export default function Index() {
   switch (PASO) {
@@ -35,6 +42,20 @@ export default function Index() {
       return <Paso5 />
     case 7:
       return <Paso6 />
+    case 8:
+      return <Paso1mp/>
+    case 9:
+      return <Paso2mp/>
+    case 10:
+      return <Paso3mp/>
+    case 11:
+      return <Paso4mp/>
+    case 12:
+      return <Paso5mp/>
+    case 13:
+      return <Paso6mp/>
+      
+      
     default:
       return (
         <View style={styles.centrado}>
