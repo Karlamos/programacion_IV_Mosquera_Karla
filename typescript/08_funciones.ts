@@ -68,7 +68,7 @@ function formatear(valor: boolean): string;
 
 function formatear(valor: number | string | boolean): string {
     if(typeof valor === "number"){
-        return valor.toLocaleString("es.MX",{ minimumFractionDigits: 2})
+        return valor.toLocaleString("es-MX",{ minimumFractionDigits: 2})
     }
     if(typeof valor === "boolean"){
         return valor? "si":"no"

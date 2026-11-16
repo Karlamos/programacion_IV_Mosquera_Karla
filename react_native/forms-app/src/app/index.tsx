@@ -32,6 +32,18 @@ export default function Index() {
       return <Paso5 />
     case 6:
       return <Paso6/>
+    case 7:
+      return <Paso7mp />
+    case 8:
+      return <Paso8mp />
+    case 9:
+      return <Paso9mp />
+    case 10:
+      return <Paso10mp />
+    case 11:
+      return <Paso11mp />
+    case 12:
+      return <Paso12mp />
     default:
       return (
         <View style={styles.centrado}>
